@@ -42,13 +42,13 @@ jobs:
       - name: Build and push database image
         uses: docker/build-push-action@v6
         with:
-          context: ./initdb
+          context: .
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/tp-devops-db:latest
           push: true
 
       - name: Build and push httpd image
         uses: docker/build-push-action@v6
         with:
-          context: ./http-server
+          context: .
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/tp-devops-httpd:latest
           push: true
