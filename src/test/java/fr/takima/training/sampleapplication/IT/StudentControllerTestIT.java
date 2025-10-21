@@ -82,7 +82,7 @@ class StudentControllerTestIT {
     void testPostStudentWithoutDepartment() throws Exception {
         String body = """
                 {
-                    "lastname": "Didier",
+                    "lastname": "Didier"
                     }
                 }
                 """;
