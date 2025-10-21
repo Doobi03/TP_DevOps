@@ -16,12 +16,10 @@ jobs:
         uses: actions/setup-java@v4
         with:
           distribution: 'temurin'
-          java-version: '17'
+          java-version: '21'
 
       - name: Run Maven tests
-        run: |
-          cd simple-api
-          mvn clean verify
+        run: mvn clean verify
 
   build-and-push-docker-image:
     needs: test-backend
