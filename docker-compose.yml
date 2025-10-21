@@ -7,16 +7,16 @@ services:
       - database
     environment:
       SPRING_DATASOURCE_URL: jdbc:postgresql://database:5432/simpleapi
-      SPRING_DATASOURCE_USERNAME: myuser
-      SPRING_DATASOURCE_PASSWORD: Changeme
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: pwd
 
   database:
     image: postgres:17.2-alpine
     restart: always
     environment:
       POSTGRES_DB: simpleapi
-      POSTGRES_USER: myuser
-      POSTGRES_PASSWORD: Changeme
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: pwd
     volumes:
       - pgdata:/var/lib/postgresql/data
       - ./initdb:/docker-entrypoint-initdb.d
