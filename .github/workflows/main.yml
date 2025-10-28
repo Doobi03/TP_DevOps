@@ -76,10 +76,10 @@ jobs:
       - name: Setup Ansible
         run: sudo apt update && sudo apt install -y ansible sshpass
       - name: Set up SSH key
-        run: mkdir -p ~/.ssh && echo "${{ secrets.SERVER_PRIVATE_KEY }}" > ~/.ssh/id_rsa && chmod 600 ~/.ssh/id_rsa
+        run: mkdir -p ~/.ssh && echo "${{ secrets.SERVER_PRIVATE_KEY }}" > /mnt/c/Users/julie/Documents/5A/DevOps/tp1_copy/DevOpsTP/ansible/inventories/id_rsa && chmod 600 /mnt/c/Users/julie/Documents/5A/DevOps/tp1_copy/DevOpsTP/ansible/inventories/id_rsa
 
       - name: Add server to known_hosts
         run: ssh-keyscan -H julien.thepaut.takima.cloud >> ~/.ssh/known_hosts
 
       - name: Run Ansible playbook
-        run: ansible-playbook -i ansible/inventories/setup.yml ansible/playbook.yml --private-key ~/.ssh/id_rsa -u admin --become
+        run: ansible-playbook -i ansible/inventories/setup.yml ansible/playbook.yml --private-key /mnt/c/Users/julie/Documents/5A/DevOps/tp1_copy/DevOpsTP/ansible/inventories/id_rsa -u admin --become
