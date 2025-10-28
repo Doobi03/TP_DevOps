@@ -80,6 +80,5 @@ jobs:
 
       - name: Add server to known_hosts
         run: ssh-keyscan -H julien.thepaut.takima.cloud >> ~/.ssh/known_hosts
-
       - name: Run Ansible playbook
         run: ansible-playbook -i ansible/inventories/setup.yml ansible/playbook.yml --private-key ~/.ssh/id_rsa -u admin --become
